@@ -36,11 +36,15 @@
                         <input class="form-control text-box single-line" id="txtNome" name="Nome" type="text" value="">
                     </div>
                 </div>
-
-                   <div class="col-md-3">
-                        <select id="ddlCidade" name="Cidade" class="form-control" onchange="javascript: onShowValorChange(this);"></select>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="ddlCidade">Cidade</label>
+                    <div class="col-md-3">
+                        <select class="form-control">
+                            <option value="0">--- Selecione ---</option>
+                        </select>
                     </div>
-                    <label id="lblValorDDLCidade"></label>
+                    <label></label>
+                </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="ckbAtivo">Ativo?</label>
