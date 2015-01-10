@@ -7,14 +7,16 @@
     <link href="../Styles/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
 
+    <script src="../Scripts/index.js"></script>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/Home/">JavaScript Begin</a>
+                <a class="navbar-brand" href="index.html">JavaScript Begin</a>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/Home/">Home</a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
                 </ul>
             </div>
         </div>
@@ -25,11 +27,11 @@
         <!-- Cadastrar -->
 
         <form id="form1">
-            <h2>...</h2>
+            <h2>Cadastrar Cliente</h2>
 
             <div class="form-horizontal">
 
-                <!--
+                
                 <div class="form-group">
                     <label class="control-label col-md-2" for="txtNome">Nome</label>
                     <div class="col-md-10">
@@ -39,8 +41,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-2" for="ddlCidade">Cidade</label>
                     <div class="col-md-3">
-                        <select class="form-control">
-                            <option value="0">--- Selecione ---</option>
+                        <select class="form-control" id="ddlCidade">
                         </select>
                     </div>
                     <label></label>
@@ -57,10 +58,10 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="button" value="..." class="btn btn-primary">
+                        <input type="button" value="Cadastrar" class="btn btn-primary" onclick="onCadastrarClienteClick();">
                     </div>
                 </div>
-                    -->
+                    
             </div>
         </form>
 
@@ -77,7 +78,7 @@
 
         <hr />
         <footer>
-            <p>&copy; - My JavaScript Application</p>
+            <p>&copy; <label id="lblTimeYear"></label> - My JavaScript Application</p>
         </footer>
     </div>
 </body>

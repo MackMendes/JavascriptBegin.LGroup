@@ -1,0 +1,167 @@
+﻿Segue abaixo lista dos assuntos que serão abordados:
+
+- 1: Utilização do Chrome para depurar, console, inspecionar elementos, olhar cabeçalho request, etc. 
+- 2: Tipos de Dados (texto, número, lógico (true ou false)) 
+- 3: Variáveis (escopo global e escolo local) 
+- 4: Operadores Lógicos (===, ==, !==, !=, >, >=, <, <=) 
+- 5: Condicional (If, IfElse, Switch, If Ternário) 
+- 6: Function (Nomeada e Anônima) 
+- 7: Tipos de Dados (Array e Dicionário (Objetos)) 
+- 8: Laços (For, While, Do While) 
+- 9: Manupulando String 
+- 10: Parse (int, float) 
+- 11: isNaN, undefined, null 
+- 12: DOM 
+- 13: Selectores (document.getBy...) / Atribuir (value, text) 
+- 14: Eventos HTML; (click, change, blur, focus, mouseover, keydown) 
+
+===================================================================================================================
+
+ HTML Base
+ - GitHub (https://github.com/MackMendes/JavaScriptBegin.LGroup).
+
+ Javascript é uma linguaguem de programação INTERPRETADA pelos navegadores (browser's), 
+ no lado do cliente (client-side) e interage-se com os 
+ usuário sem a necessidade de ir no servidor, para manipular informações, 
+ estilos ou comportamento na página.
+ "É uma linguagem de script multi-paradigma,  baseada em protótipo que é dinâmica, e suporta estilos de 
+ programação orientado a objetos, imperativo e funcional." - Mozilla Developer
+ 
+  "JavaScript foi originalmente desenvolvido por Brendan Eich da Netscape sob o nome de Mocha,
+  posteriormente teve seu nome mudado para LiveScript e por fim JavaScript. Foi lançada pela primeira vez na 
+  versão beta do navegador Netscape 2.0 em 1995." - Wikipédia
+
+  A microsoft criou o JScript, 
+  "onde foi incluído no Internet Explorer 3.0, liberado em Agosto de 1996."... 
+   claro que com a criação de outra linguagem similar ao 
+  JavaScript, tinha que ter uma padronização. 
+
+  "Em 1996 a Netscape anunciou que tinha submetido JavaScript para Ecma internacional como 
+  candidato a padrão industrial e o trabalho subsequente resultou na versão padronizada chamada ECMAScript." - Wikipédia
+
+  ECMAScript, é a linguagem base para a do JavaScript. Então as atualizações na ECMAScript vão impactar diretamente as atualizações no JavaScript.
+
+  Hoje em dia é possível utilizar ela no servidor, através do Node.js...
+
+  -----
+
+1: <script>
+  - Gerar na propria página o primeiro script, para setar o ano no Footer da página. (textContent)
+    window.onload = 
+
+2: Console (depurar código)
+ - Mostrar o console.
+
+3: No projeto, vamos criar as pastas "shared". 
+ - Depois util.js, retirar o código criado na página e adicionar nesse arquivo separado.
+
+
+ DOM: Document Object Model) Modelo de Objeto de Documento. Responsável por manipular os objetos HTML da página. Podendo ser utilizado por uma linguagem script,
+ no nosso caso o JavaScript! 
+
+ "DOM é a interface entre a linguagem Javascript e os objetos do HTML" - w3c
+ "DOM é uma convenção multiplataforma e independente de linguagem para representação e interação com objetos em documentos HTML, XHTML e XML." - Wikipedia
+
+ ---- 
+
+4: Começar o Cadastro do Cliente
+  - Criar: Nome, Telefone, E-mail, Data de Nascimento, Cidade (DropDownList), Ativo (checkbox) e um Botão
+  - Depois cria uma div, para mostrar as notificações de erro ou sucesso.
+
+5: Cadastrar:
+  - Criar pasta home, dentro dele cadastrar.js;
+  - Criar a função onCadastrarClick() { return true; return false;};
+  - Cria função Validar (Nome, Telefone, Email, DataNascimento). Caso não estaja certo: 
+	 -> '<strong>Atenção: </strong>Preencha os campos em destaque abaixo.'
+	(classe erro input: "errorInput"), (classe erro div: "alert, alert-danger")
+
+  - Função LimparMensagensErros(): document.getElementsByClassName('errorInput');
+      while (listClassErrorInput.length > 0) {
+        var index = (listClassErrorInput.length - 1);
+        listClassErrorInput[index].classList.remove('errorInput');
+     }
+
+	 document.getElementById('divAlert');
+	 (divAlerta.classList.contains('alert') || divAlerta.classList.contains('alert-danger'))
+	 divAlerta.innerHTML = '';
+
+   - Função MensagemSucesso(): '<strong>Sucesso: </strong>Cliente cadastrado com sucesso!' (classe erro div: "alert, alert-success")
+   - Função DesaparecerMensagemSucesso(): setTimeout( function () { LimparMensagem(); }, 5000 );
+
+   - Função LimparCampos():     
+		selectedIndex = 0;    
+		checked = false;
+
+
+   - Criar na pasta home, index.js;
+   - Dentro do index.js, array listClientes. E função AdicionarCliente(cliente) (push);
+   - Concluir o cadastro de cliente (Objeto Cliente) => AdicionarCliente(Cliente);
+
+
+   - Criar no arquivo util.js o Array de Cidades {texto: value: }
+   - Função PreencherDDLCidade():   var index = 0; do { index++; } while (Cidades.length > index);
+   - Refatora com a função: ExecutarTodasFuncoes();
+
+ 
+6: Listar:
+
+   - Na página, table: criar thead (tr/ <th>#</th>) e tbody* (tr / <td></td>); 
+   - Criar arquivo listar.js.
+   - Função ListarCliente(): 
+		* verificar se a lista de cliente esta null ou undefined com if ternário;
+		* for normal
+		* '"<a href='javascript:void(0)'">Excluir</a>"' (ExcluirCliente(" + i.toString() + ");)
+
+
+	- Função ExcluirCliente(index): listClientes.splice(index, 1);
+   
+
+7: Brincar com os eventos e manipulação de string:
+
+   + Blur na Data Nascimento
+    - Função onValidaDataNascimentoBlur(domHtml): 
+		* var arrayDiaMesAno = domHtml.value.split('/');
+		* Validar Quantidade de 3...
+		* Validar se o que foi digitado só tem números
+		* Validar se a data esta correta... 
+			var data = new Date(ano, mes, dia);
+            if (data.getDate() !== dia || data.getMonth() !== mes || data.getFullYear() !== ano) {
+	   
+	+ Blur no E-mail
+	 - onValidaEmailBlur(domHtml) 
+	   * domHtml.value.indexOf('@');
+
+
+	+ Change Cidade
+	 - onShowValorChange(domHtml):
+		* lblValorDDLCidade.textContent = domHtml.options[domHtml.selectedIndex].text;
+
+
+	+ KeyDown no Telefone
+	 - onValidarTelefoneKeyDown(evt):
+	  * var tecla = (evt.keyCode ? evt.keyCode : evt.charCode);
+	  * (tecla >= 48 && tecla <= 59) || (tecla >= 96 && tecla <= 105)
+	  * lblValorKeyPressTelefone.textContent = 'Numérico';
+
+
+	 + MouseOver grid
+	  - onClienteAtivoMouseOver(domHtml, isAtivo):
+	   * domHtml.style.border = 'red 1px dashed';
+
+
+8: Tag <noscript> e desativando o javascript da página, através do FireFox ou Chrome
+
+9: Mostrar no IE os erros...
+
+10: Fontes de Estudo: 
+	***** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide 
+	***** http://www.codecademy.com/pt-BR/tracks/javascript   - Academia On-line de JavaScript
+	***** http://www.w3schools.com/js/ 
+
+	Livros: 
+	***** Dominando JavaScript Com Jquery - Casa do Código (PT)
+	***** Secrets Of The Javascript Ninja 
+
+Contato: charlesmendes31@gmail.com
+Twitter: https://twitter.com/CharlesMendesMa
+Github: https://github.com/MackMendes/
