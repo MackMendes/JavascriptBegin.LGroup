@@ -8,6 +8,7 @@ function Validar() {
     var txtTelefone = document.getElementById('txtTelefone');
     var txtEmail = document.getElementById('txtEmail');
     var txtDataNascimento = document.getElementById('txtDataNascimento');
+    var ddlCidade = document.getElementById('ddlCidade');
 
     var isValido = true;
 
@@ -33,6 +34,11 @@ function Validar() {
     if (txtDataNascimento.value === '') {
         isValido = false;
         txtDataNascimento.classList.add('errorInput');
+    }
+
+    if (ddlCidade.value === '0') {
+        isValido = false;
+        ddlCidade.classList.add('errorInput');
     }
 
     if (isValido === false) {
@@ -188,7 +194,11 @@ function onValidaEmailBlur(domHtml) {
 // Função executada no evento Change do DropDownList (select)
 function onShowValorChange(domHtml) {
     var lblValorDDLCidade = document.getElementById('lblValorDDLCidade');
-    lblValorDDLCidade.textContent = domHtml.options[domHtml.selectedIndex].text;
+    var textDDL = '';
+    if (domHtml.selectedIndex > 0) {
+        textDDL = domHtml.options[domHtml.selectedIndex].text;
+    }
+    lblValorDDLCidade.textContent = textDDL;
 }
 
 // Função que é executado no evento KeyDown
