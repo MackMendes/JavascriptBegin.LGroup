@@ -165,8 +165,12 @@ function onValidaDataNascimentoBlur(domHtml) {
             }
             
             // Validar se a data esta correta...
-            var data = new Date(ano, mes, dia);
-            if (data.getDate() !== dia || data.getMonth() !== mes || data.getFullYear() !== ano) {
+            var mesString = (mes.toString().length === 1 ? "0" + mes.toString() : mes.toString());
+            var diaString = (dia.toString().length === 1 ? "0" + dia.toString() : dia.toString());
+            var dateString = diaString + "/" + mesString + "/" + ano;
+            var data = new Date(ano + "-" + mesString + "-" + diaString + "T03:24:00");
+            
+            if (dateString !== data.toLocaleDateString()) {
                 alert('Por favor, digite uma data válida.');
                 domHtml.value = '';
             }
