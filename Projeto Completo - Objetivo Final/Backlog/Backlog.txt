@@ -56,7 +56,7 @@
  - Depois util.js, retirar o código criado na página e adicionar nesse arquivo separado.
 
 
- DOM: Document Object Model) Modelo de Objeto de Documento. Responsável por manipular os objetos HTML da página. Podendo ser utilizado por uma linguagem script,
+ DOM: (Document Object Model) Modelo de Objeto de Documento. Responsável por manipular os objetos HTML da página. Podendo ser utilizado por uma linguagem script,
  no nosso caso o JavaScript! 
 
  "DOM é a interface entre a linguagem Javascript e os objetos do HTML" - w3c
