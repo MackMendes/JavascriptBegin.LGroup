@@ -151,9 +151,7 @@
 
 8: Tag <noscript> e desativando o javascript da página, através do FireFox ou Chrome
 
-9: Mostrar no IE os erros...
-
-10: Fontes de Estudo: 
+9: Fontes de Estudo: 
 	***** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide 
 	***** http://www.codecademy.com/pt-BR/tracks/javascript   - Academia On-line de JavaScript
 	***** http://www.w3schools.com/js/ 
