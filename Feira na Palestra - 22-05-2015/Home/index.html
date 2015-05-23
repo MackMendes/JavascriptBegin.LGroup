@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>LGroup - JavaScript Begin</title>
+    <!-- Styles -->
+    <link href="../Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+
+    <!-- JavaScript -->
+    <script src="../Scripts/index.js"></script>
+    <script src="../Scripts/cadastrar.js"></script>
+    <script src="../Scripts/listar.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">JavaScript Begin</a>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+        <!-- Cadastrar -->
+
+        <form id="formCadastrar">
+            <h2>Cadastrar Cliente</h2>
+
+            <div class="form-horizontal">
+                <div id="divAlert">
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="txtNome">Nome</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="txtNome" name="Nome" type="text" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="txtTelefone">Telefone</label>
+                    <div class="col-md-3">
+                        <input class="form-control text-box single-line" id="txtTelefone"
+                                name="Telefone" type="tel" value="">
+                    </div>
+                    <label id="lblValorKeyPressTelefone"></label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="txtEmail">Email</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="txtEmail"
+                               name="Email" type="email" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="ddlCidade">Cidade</label>
+                    <div class="col-md-3">
+                        <select id="ddlCidade" name="Cidade" class="form-control">
+                        </select>
+                    </div>
+                    <label id="lblValorDDLCidade"></label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="ckbAtivo">Ativo?</label>
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            <input class="check-box" id="ckbAtivo" name="IsAtivo" type="checkbox" value="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Cadastrar" class="btn btn-primary" 
+                        onclick="onCadastrarClick();">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form id="formListar">
+
+            <h2>...</h2>
+
+            <div class="form-horizontal">
+                <table id="tbListaCliente" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Cidade</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyListaCliente">
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </form>
+
+
+        <hr />
+        <footer>
+            <p>&copy; <label id="lblTimeYear"></label> - Minha Aplicação em JavaScript (.NetCoders)</p>
+        </footer>
+    </div>
+</body>
+</html>
