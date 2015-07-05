@@ -164,13 +164,11 @@ function onValidaDataNascimentoBlur(domHtml) {
                 domHtml.value = '';
             }
             
-            // Validar se a data esta correta...
             var mesString = (mes.toString().length === 1 ? "0" + mes.toString() : mes.toString());
             var diaString = (dia.toString().length === 1 ? "0" + dia.toString() : dia.toString());
             var dateString = diaString + "/" + mesString + "/" + ano;
-            var data = new Date(ano + "-" + mesString + "-" + diaString + "T03:24:00");
             
-            if (dateString !== data.toLocaleDateString()) {
+            if (!ValidaDataRegex(dateString)) {
                 alert('Por favor, digite uma data válida.');
                 domHtml.value = '';
             }
@@ -181,6 +179,13 @@ function onValidaDataNascimentoBlur(domHtml) {
             domHtml.value = '';
         }
     }
+}
+
+function ValidaDataRegex(data) {
+     var regex = /^((((0?[1-9]|1\d|2[0-8])\/(0?[1-9]|1[0-2]))|((29|30)\/(0?[13456789]|1[0-2]))|(31\/(0?[13578]|1[02])))\/((19|20)?\d\d))$|((29\/0?2\/)((19|20)?(0[48]|[2468][048]|[13579][26])|(20)?00))$/;
+     
+     var resultado = regex.exec(data);
+     return ((!resultado) === false);
 }
 
 
